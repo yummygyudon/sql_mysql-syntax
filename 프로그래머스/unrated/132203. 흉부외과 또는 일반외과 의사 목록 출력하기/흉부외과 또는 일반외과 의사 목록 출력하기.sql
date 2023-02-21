@@ -1,0 +1,8 @@
+/*
+ - 진료과 : 흉부외과(CS) or 일반외과(GS)
+ - 고용일자 내림차 & 이름 오름차
+*/
+SELECT DR_NAME, DR_ID, MCDP_CD, SUBSTR(HIRE_YMD,1,10)
+FROM DOCTOR
+WHERE MCDP_CD IN ('CS', 'GS') 
+ORDER BY HIRE_YMD DESC, DR_NAME ASC
