@@ -1,0 +1,12 @@
+-- 코드를 입력하세요
+
+/*
+ 조회 = ID, 이름, 성별, 생년월일 
+ 조건 = 생일  3월
+       (제외 = 전화번호 NULL)
+       (회원 ID 오름차순)
+*/
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, SUBSTR(DATE_OF_BIRTH,1,10) AS DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE GENDER = 'W' AND MONTH(DATE_OF_BIRTH) = 3 AND TLNO IS NOT NULL
+ORDER By MEMBER_ID ASC ;
