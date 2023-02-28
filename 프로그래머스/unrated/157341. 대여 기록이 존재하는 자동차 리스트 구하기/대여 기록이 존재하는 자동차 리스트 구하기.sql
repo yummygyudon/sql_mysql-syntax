@@ -1,0 +1,9 @@
+/*
+ * "세단" & 10월에 대여 시작
+    - ID 중복 불가
+    - 자동차 ID 내림차
+*/
+SELECT DISTINCT ch.CAR_ID
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY as ch LEFT JOIN CAR_RENTAL_COMPANY_CAR as cc ON ch.CAR_ID = cc.CAR_ID
+WHERE MONTH(ch.START_DATE) = 10 AND cc.CAR_TYPE = '세단'
+ORDER BY ch.CAR_ID DESC
